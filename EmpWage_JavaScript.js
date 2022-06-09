@@ -1,24 +1,30 @@
-//UC3 using Function
+//UC4 using for loop
 {
-
-    const isPartTime = 1;
-    const isFullTime = 2;
+    const numOfWorkingDays = 20;
+    const partTimeEmp = 1;
+    const fullTimeEmp = 2;
     const partTimeHour = 4;
     const fullTimeHour = 8;
     const wagePerHour = 20;
+
+    let totalEmpHours = 0;
+
     function empHrsFinder(num) {
         switch (num) {
-            case isPartTime:
+            case partTimeEmp:
                 return partTimeHour;
-            case isFullTime:
+            case fullTimeEmp:
                 return fullTimeHour;
             default:
                 return 0;
         }
     }
-    let num = Math.floor(Math.random() * 10) % 3;
-    let empHrs = empHrsFinder(num);
-    let empWage = empHrs * wagePerHour;
-    console.log("Employee Wage : " + empWage + " Employee Hours : " + empHrs);
+
+    for (let day = 0; day <= numOfWorkingDays; day++) {
+        let num = Math.floor(Math.random() * 10) % 3;
+        totalEmpHours += empHrsFinder(num);;
+    }
+    let empWage = totalEmpHours * wagePerHour;
+    console.log("Total Employee Hours : " + totalEmpHours + " Employee Wage " + empWage);
 }
 
