@@ -1,11 +1,26 @@
-//UC1 using if else
+//UC2 using switch case
 {
     const isAbsent = 0;
-    let num = Math.floor(Math.random() * 10) % 2;
-    if (num == isAbsent) {
-        console.log("Employee is Absent");
+    const partTimeEmp = 1;
+    const fullTimeEmp = 2;
+    const partTimeHour = 4;
+    const fullTimeHour = 8;
+    const wagePerHour = 20;
+
+    let empHrs = 0;
+    let num = Math.floor(Math.random() * 10) % 3;
+    switch (num) {
+
+        case partTimeEmp:
+            empHrs = partTimeHour;
+            break;
+        case fullTimeEmp:
+            empHrs = fullTimeHour;
+            break;
+        default:
+            empHrs = 0;
+
     }
-    else {
-        console.log("Employee is Present");
-    }
+    let empWage = wagePerHour * empHrs;
+    console.log("Employee wage is " + empWage);
 }
